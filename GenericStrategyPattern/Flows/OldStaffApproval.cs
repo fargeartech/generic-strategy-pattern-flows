@@ -6,7 +6,7 @@ namespace GenericStrategyPattern.Flows
     public class OldStaffApproval : IStatusFlows<ApprovalStateStatus, Approval>
     {
         private List<ApprovalStateStatus> _statuses;
-        public IEnumerable<ApprovalStateStatus> NextStatus(Approval source)
+        public ICollection<ApprovalStateStatus> NextStatus(Approval source)
         {
             _statuses = new List<ApprovalStateStatus>();
             var current = source.CurrentStatus;

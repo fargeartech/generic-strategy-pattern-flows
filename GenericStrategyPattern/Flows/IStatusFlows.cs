@@ -2,8 +2,8 @@
 
 namespace GenericStrategyPattern.Flows
 {
-    public interface IStatusFlows<T, S>
+    public interface IStatusFlows<T, U>
     {
-        IEnumerable<T> NextStatus(S source);
+        ICollection<T> NextStatus(U parameter);
     }
 }

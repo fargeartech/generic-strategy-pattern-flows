@@ -1,4 +1,6 @@
-﻿using GenericStrategyPattern.Flows;
+﻿using BenchmarkDotNet.Running;
+using GenericStrategyPattern.Benchmark;
+using GenericStrategyPattern.Flows;
 using System;
 using System.Collections.Generic;
 
@@ -8,13 +10,14 @@ namespace GenericStrategyPattern
     {
         static void Main(string[] args)
         {
-            var approval = new Approval();
-            var listNextStatus = FlowHandler<ApprovalStateStatus, Approval>.BuildNextStatus(new NewStaffApproval(), approval);
-            PrintMessage(listNextStatus);
-            Console.WriteLine("\n ----------------- \n");
-            approval.CurrentStatus = ApprovalStatus.ProficientcyTest1;
-            var next = FlowHandler<ApprovalStateStatus, Approval>.BuildNextStatus(new OldStaffApproval(), approval);
-            PrintMessage(next);
+            //var approval = new Approval();
+            //var listNextStatus = FlowHandler<ApprovalStateStatus, Approval>.BuildNextStatus(new NewStaffApproval(), approval);
+            //PrintMessage(listNextStatus);
+            //Console.WriteLine("\n ----------------- \n");
+            //approval.CurrentStatus = ApprovalStatus.ProficientcyTest1;
+            //var next = FlowHandler<ApprovalStateStatus, Approval>.BuildNextStatus(new OldStaffApproval(), approval);
+            //PrintMessage(next);
+            BenchmarkRunner.Run<TestFlow>();
         }
 
         private static void PrintMessage(IEnumerable<ApprovalStateStatus> listNextStatus)

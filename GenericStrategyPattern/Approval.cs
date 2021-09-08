@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GenericStrategyPattern.Flows;
+using System;
 
 namespace GenericStrategyPattern
 {
